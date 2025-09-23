@@ -206,8 +206,8 @@
     <td>2.1M</td>
   </tr>
   <tr>
-    <tr>SomnoNet</tr>
-    <tr>21M</tr>
+    <td>DeepSleepNet</td>
+    <td>21M</td>
   </tr>      
 </tbody>
 </table>
