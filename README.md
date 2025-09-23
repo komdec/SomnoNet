@@ -1,4 +1,4 @@
-# DetectSleepNet
+# SomnoNet
 ## A simple, efficient, and interpretable sleep staging method (SOTA)
 
 
@@ -22,7 +22,7 @@
 <tbody>
   <tr>
     <td rowspan="6">Physio2018</td>
-    <td>DetectSleepNet</td>
+    <td>SomnoNet</td>
     <td><b>80.9</b></td>
     <td><b>79.0</b></td>
     <td><b>0.739</b></td>
@@ -44,7 +44,7 @@
     <td><b>86.3</b></td>
   </tr>
   <tr>
-    <td>DetectSleepNet-tiny</td>
+    <td>SomnoNet-nano</td>
     <td>80.5</td>
     <td>78.6</td>
     <td>0.734</td>
@@ -89,7 +89,7 @@
   </tr>
   <tr>
     <td rowspan="7">SHHS</td>
-    <td>DetectSleepNet</td>
+    <td>SomnoNet</td>
     <td><b>88.1</b></td>
     <td><b>80.8</b></td>
     <td><b>0.833</b></td>
@@ -133,7 +133,7 @@
     <td><ins>88.2</ins></td>
   </tr>
     <tr>
-    <td>DetectSleepNet-tiny</td>
+    <td>SomnoNet-nano</td>
     <td>87.4</td>
     <td>79.0</td>
     <td>0.822</td>
@@ -182,11 +182,11 @@
 </thead>
 <tbody>
   <tr>
-    <td>DetectSleepNet-tiny</td>
+    <td>SomnoNet-nano</td>
     <td><b>0.049M</b></td>
   </tr>
   <tr>
-    <td>DetectSleepNet</td>
+    <td>SomnoNet</td>
     <td><ins>0.43M</ins></td>
   </tr>
   <tr>
@@ -206,7 +206,7 @@
     <td>2.1M</td>
   </tr>
   <tr>
-    <tr>DeepSleepNet</tr>
+    <tr>SomnoNet</tr>
     <tr>21M</tr>
   </tr>      
 </tbody>
