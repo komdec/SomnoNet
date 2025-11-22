@@ -1146,3 +1146,40 @@ def rms_v(array,window,strip):
         rms_list.append(rms_i)
         i += 1
     return rms_list
+
+
+def trans_data(data, dim, torch_trans=False):
+    is_numpy = isinstance(data, np.ndarray)
+    is_torch  = isinstance(data, torch.Tensor)
+
+    if not (is_numpy or is_torch):
+        raise TypeError("data must be numpy.ndarray or torch.Tensor")
+
+    orig_type = "numpy" if is_numpy else "torch"
+
+    cur_dim = data.ndim
+    if cur_dim > dim:
+        print(f"[error] input shape: {cur_dim}, target shape: {dim}")
+    else:
+        for _ in range(dim - cur_dim):
+            data = data[np.newaxis, ...] if is_numpy else data.unsqueeze(0)
+        cur_dim = data.ndim
+
+    if torch_trans:
+        if is_numpy:
+            # numpy -> torch
+            data = torch.from_numpy(data)
+        else:
+            # torch -> numpy
+            data = data.detach().cpu().numpy()
+    return data
+    
+def gen_showMap(show_map):
+    new_show_map = [ 0 for i in range(len(show_map)+1)]
+    for i in range(len(show_map)):
+        new_show_map[i]+=show_map[i]
+        new_show_map[i+1]+=show_map[i]
+    new_show_map[0]+=show_map[0]
+    new_show_map[-1]+=show_map[-1]
+    new_show_map = np.array(new_show_map)
+    return new_show_map

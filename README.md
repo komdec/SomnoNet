@@ -1,7 +1,12 @@
 # SomnoNet
 ## A simple, efficient, and interpretable sleep staging method (SOTA)
 
+SomnoNet is an extremely lightweight yet highly effective deep learning framework for automatic sleep staging.  
 
+
+---
+
+# 📊 Benchmarking Results
 
 <table><thead>
   <tr>
@@ -171,6 +176,11 @@
 
 <img src="figures/diff_sample.jpg" alt="EEG data with different adoption rates" width="450">
 
+
+---
+
+# 📦 Model Size Comparison
+
 **Fig1. EEG data with different adoption rates**
 
 <table>
@@ -215,3 +225,13 @@
 
 **Table2. The number of model parameters for different methods**
 
+We additionally provide **three interpretability visualization notebooks** for understanding the learned features of SomnoNet, along with example data and corresponding models.
+---
+
+# 🔍 New: Interpretability & Visualization
+
+To better understand how SomnoNet extracts discriminative features for sleep staging, we provide three visualization Jupyter notebooks:
+
+### ✔ `Interpretability_voting.ipynb`
+### ✔ `Interpretability_vector_forward.ipynb`
+### ✔ `Interpretability_vector_backward.ipynb`
