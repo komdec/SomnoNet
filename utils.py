@@ -49,7 +49,11 @@ def net_param(net):
         return("Number of parameter: %.2fK" % (pre_total/1e3))
     else:
         return("Number of parameter: %.2fM" % (pre_total/1e6)) 
-    
+
+def net_param_k(net):
+    pre_total = sum([param.nelement() for param in net.parameters()])    
+    return pre_total/1e3
+   
 def butter_bandpass(lowcut, highcut, fs, order=5):
     nyq = 0.5 * fs
     low = lowcut / nyq
