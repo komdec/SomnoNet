@@ -1,12 +1,32 @@
 # SomnoNet
-## A simple, efficient, and interpretable sleep staging method (SOTA)
+### A Lightweight and Interpretable Framework for Sleep Staging Using Single-Channel EEG
+[![Journal](https://img.shields.io/badge/IEEE-JBHI-blue)](https://doi.org/10.1109/JBHI.2026.3713336)
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FJBHI.2026.3713336-blue)](https://doi.org/10.1109/JBHI.2026.3713336)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-SomnoNet is an extremely lightweight yet highly effective deep learning framework for automatic sleep staging.  
+**Accepted for publication in the IEEE Journal of Biomedical and Health Informatics (J-BHI), 2026.**
 
+**Paper:** [SomnoNet: A Lightweight and Interpretable Framework for Sleep Staging Using Single-Channel EEG](https://doi.org/10.1109/JBHI.2026.3713336)  
+**Authors:** Shengwei Guo and Guobing Sun  
+**DOI:** [10.1109/JBHI.2026.3713336](https://doi.org/10.1109/JBHI.2026.3713336)
 
+SomnoNet is a lightweight and interpretable deep learning framework for automatic sleep staging from raw single-channel EEG. It hierarchically models local EEG rhythms, intra-epoch organization, and inter-epoch temporal context while maintaining a compact parameter footprint.
+
+SomnoNet-Nano further reduces the model size to only **0.049 million parameters** by reusing the learned morphology encoder and employing a lightweight temporal modeling module.
+
+## Highlights
+
+- End-to-end sleep staging from raw single-channel EEG.
+- Hierarchical modeling of local rhythms, intra-epoch structure, and inter-epoch context.
+- Competitive performance on the Physio2018 and SHHS benchmarks.
+- Only **0.43M parameters** for SomnoNet.
+- Only **0.049M parameters** for SomnoNet-Nano.
+- Rhythm-aware interpretation of segment-level and epoch-level model evidence.
+- Visualization notebooks, example data, and pretrained models are provided.
+  
 ---
 
-# 📊 Benchmarking Results
+## 📊 Benchmark Results
 
 <table><thead>
   <tr>
@@ -172,22 +192,34 @@ SomnoNet is an extremely lightweight yet highly effective deep learning framewor
   </tr>
 </tbody></table>
 
-**Table1. Benchmarking against recent state-of-the-art methods**
+**Table 1.** Comparison with representative sleep-staging methods.
 
-<img src="figures/diff_sample.jpg" alt="EEG data with different adoption rates" width="450">
+OA and class-wise F1 scores are reported as percentages. MF1 denotes
+macro-averaged F1 score, and $\kappa$ denotes Cohen's kappa. Bold and
+underlined values indicate the best and second-best results, respectively.
+
+<p align="center">
+  <img src="figures/diff_sample.jpg"
+       alt="Performance under different EEG sampling rates"
+       width="500">
+</p>
+
+<p align="center">
+  <b>Figure 1.</b> Performance of SomnoNet under different EEG sampling rates.
+</p>
+
 
 
 ---
+## Model Size Comparison
 
-# 📦 Model Size Comparison
-
-**Fig1. EEG data with different adoption rates**
+**Fig1. EEG data with different sampling rates**
 
 <table>
 <thead>
   <tr>
     <th>Method</th>
-    <th>parameter</th>
+    <th>Parameters</th>
   </tr>
 </thead>
 <tbody>
@@ -223,15 +255,50 @@ SomnoNet is an extremely lightweight yet highly effective deep learning framewor
 </table>
 
 
-**Table2. The number of model parameters for different methods**
+**Table 2.** Parameter comparison with representative lightweight sleep-staging models.
 
-We additionally provide **three interpretability visualization notebooks** for understanding the learned features of SomnoNet, along with example data and corresponding models.
 ---
 
-# 🔍 New: Interpretability & Visualization
+## Interpretability and Visualization
 
-To better understand how SomnoNet extracts discriminative features for sleep staging, we provide three visualization Jupyter notebooks:
+SomnoNet provides rhythm-aware interpretation tools for examining how
+local EEG segments and temporal context contribute to sleep-stage
+predictions.
 
-### ✔ `Interpretability_voting.ipynb`
-### ✔ `Interpretability_vector_forward.ipynb`
-### ✔ `Interpretability_vector_backward.ipynb`
+The repository includes three visualization notebooks:
+
+- [`Interpretability_voting.ipynb`](Interpretability_voting.ipynb)  
+  Visualizes segment-level evidence produced by the voting-based inference head.
+
+- [`Interpretability_vector_forward.ipynb`](Interpretability_vector_forward.ipynb)  
+  Analyzes the forward temporal contribution of learned EEG representations.
+
+- [`Interpretability_vector_backward.ipynb`](Interpretability_vector_backward.ipynb)  
+  Analyzes the backward temporal contribution of learned EEG representations.
+
+Example EEG data and the corresponding pretrained models are provided in
+[`example_data`](example_data) and [`weights`](weights), respectively.
+
+## Citation
+
+If you find SomnoNet useful in your research, please cite:
+
+```bibtex
+@article{guo2026somnonet,
+  author  = {Shengwei Guo and Guobing Sun},
+  title   = {SomnoNet: A Lightweight and Interpretable Framework for Sleep Staging Using Single-Channel EEG},
+  journal = {IEEE Journal of Biomedical and Health Informatics},
+  year    = {2026},
+  doi     = {10.1109/JBHI.2026.3713336}
+}
+```
+
+## License
+
+This project is released under the [MIT License](LICENSE).
+
+## Contact
+
+For questions regarding the paper or implementation, please open a GitHub
+issue or contact the authors through the correspondence information provided
+in the paper(2211849@s.hlju.edu.cn).
